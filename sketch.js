@@ -119,7 +119,7 @@ function mouseReleased() {
 }
 function keyPressed() {
   if(keyCode === 32) {
-    slingShot.attach();
+    slingShot.attach(this.ball);
     gameState = "onSling"
   }
 }
