@@ -108,7 +108,7 @@ function draw() {
 
 
 function mouseDragged() {
-  if(gameState === onSling) {
+  if(gameState === "onSling") {
     Matter.Body.setPosition(this.ball, {x : mouseX, y : mouseY});
   }
 }
