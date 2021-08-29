@@ -8,6 +8,7 @@ var holder,ball,ground;
 var stand1,stand2,ballI;
 var ball, polygon;
 var slingShot;
+var gameState = "onSling";
 
 
 function preload () {
@@ -107,9 +108,17 @@ function draw() {
 
 
 function mouseDragged() {
-  Matter.Body.setPosition(this.ball, {x : mouseX, y : mouseY});
+  if(gameState === onSling) {
+    Matter.Body.setPosition(this.ball, {x : mouseX, y : mouseY});
+  }
 }
 
 function mouseReleased() {
   slingShot.fly();
+  gameState = "launched";
+}
+function keyPressed() {
+  if(keyCode === 32) {
+    slingshot.attach();
+  }
 }
